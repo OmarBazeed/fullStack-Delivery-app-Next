@@ -69,4 +69,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .secition-Gap {
+    @apply mt-8 sm:mt-16;
+  }
 }
