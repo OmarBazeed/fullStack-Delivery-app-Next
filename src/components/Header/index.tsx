@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from "react";
-import Link from "../Link";
 import { Routes } from "@/constants/Enums";
-import Navbar from "./Navbar";
 import { Menu, XIcon } from "lucide-react";
+import { useState } from "react";
+import Link from "../Link";
+import Navbar from "./Navbar";
 
 const Index = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+
   return (
     <header className="w-full md:h-[75px]">
       <div
