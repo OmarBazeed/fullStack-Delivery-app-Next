@@ -1,19 +1,32 @@
 "use client";
 import CommonHead from "@/components/CommonHead/CommonHead";
 import Image from "next/image";
-import pizzaImage from "../../../../public/assets/pizza.png";
 import { FormatCurrency } from "../../../lib/Formatting";
-import { DialogDemo } from "../Dialog/Dialog";
-// import { DialogDemo } from "../Dialog/Dialog";
-// import { useState } from "react";
+import { AddToCartBtn } from "../Dialog/Dialog";
+import itemImg from "../../../../public/assets/pizza.png";
 
 const BestSeller = () => {
-  // const [openDialog, setOpenDialog] = useState(false);
   const BestSellers = [
-    { itemImageUrl: pizzaImage, itemHead: "pizza", itemPrice: 100, id: 1 },
-    { itemImageUrl: pizzaImage, itemHead: "pizza", itemPrice: 100, id: 2 },
-    { itemImageUrl: pizzaImage, itemHead: "pizza", itemPrice: 100, id: 3 },
+    {
+      itemImageUrl: itemImg,
+      itemHead: "runch pizza",
+      itemPrice: 200,
+      id: 1,
+    },
+    {
+      itemImageUrl: itemImg,
+      itemHead: "new spicy pizza",
+      itemPrice: 300,
+      id: 2,
+    },
+    {
+      itemImageUrl: itemImg,
+      itemHead: "nagtes pizza",
+      itemPrice: 400,
+      id: 3,
+    },
   ];
+  console.log(BestSellers);
   return (
     <div className="container mx-auto p-4">
       <CommonHead title="delivery" head="Online Order" />
@@ -36,7 +49,9 @@ const BestSeller = () => {
 
             {/* Item Details */}
             <div className="flex justify-between items-center mt-4">
-              <h2 className="text-lg font-semibold">{BestSeller.itemHead}</h2>
+              <h2 className="font-semibold text-2xl capitalize">
+                {BestSeller.itemHead}
+              </h2>
               <FormatCurrency
                 value={BestSeller.itemPrice}
                 currency="USD"
@@ -44,14 +59,12 @@ const BestSeller = () => {
               />
             </div>
             <div className="flex items-center m-auto my-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              nemo magnam voluptatem nostrum libero unde tempora consequatur
-              neque optio iure
+              Lorem ipsum dolor sit amet consectetur adipisicing elit
             </div>
 
             {/* Button */}
             <div className="text-center mt-4">
-              <DialogDemo productId={BestSeller.id} />
+              <AddToCartBtn product={BestSeller} />
             </div>
           </div>
         ))}
